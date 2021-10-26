@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>JSON Custom Search API Example</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+        
+        var SEARCH_TERM = 'Brexit';
+    
+        var GOOGLE_CSE_ID = '002501037099736245903:klbrenxvcxk';
+        var GOOGLE_API_KEY = 'AIzaSyCLRmxBxFyABgKGbC-7cEO6JiWcgNHZsYc';
+        
+        
+      function hndlr(response) {
+          
+          console.log(response);
+          
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.htmlTitle should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyCLRmxBxFyABgKGbC-7cEO6JiWcgNHZsYc&cx=002501037099736245903:klbrenxvcxk&q=Brexit&callback=hndlr">
+    </script>
+  </body>
+</html>

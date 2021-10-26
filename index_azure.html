@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="azure-search.js"></script>
+    </head>
+    <body>
+        <script>
+ 
+        var client = AzureSearch({
+          url: "https://MY_SEARCH_SERVICE_NAME.search.windows.net",
+          key:"MY_QUERY_KEY"
+        });
+ 
+        client.search('myindex', {search:'document'}, function(err, results){
+          // results is an array of matching documents
+        });
+ 
+        </script>
+    </body>
+</html>
